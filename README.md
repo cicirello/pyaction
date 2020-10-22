@@ -35,15 +35,16 @@ The [source repository](https://github.com/cicirello/pyaction) is maintained on 
 
 ## Docker Tags and Versioning Scheme
 
-pyaction uses [Semantic Versioning](https://semver.org/) with 
-version numbers of the form: MAJOR.MINOR.PATCH, where differences in 
+Each image pushed to Docker Hub and the Github Container Registry is tagged as follows:
+* The tag `latest` indicates, well, the latest image.
+* __Beginning with version 3.12.1__: tags of the form MAJOR.MINOR.PATCH (such as 3.12.1) indicate the SemVer of the __Alpine__ image used as the base.
+* __Prior to version 3.12.1__: tags of the form MAJOR.MINOR.PATCH (such as 1.0.0) indicate the SemVer of the image, where the base image was Alpine 3.12.0.
+
+[Semantic Versioning](https://semver.org/) uses version numbers 
+of the form: MAJOR.MINOR.PATCH, where differences in 
 MAJOR correspond to incompatible changes, differences in MINOR 
 correspond to introduction of backwards compatible new functionality, 
 and PATCH corresponds to backwards compatible bug fixes.
-
-Each image pushed to Docker Hub and the Github Container Registry is tagged as follows:
-* The tag latest indicates, well, the latest image.
-* Tags of the form MAJOR.MINOR.PATCH (such as 1.0.0) indicate the SemVer of the image.
 
 
 ## Installation and Usage
