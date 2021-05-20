@@ -1,0 +1,68 @@
+name: Docker Manual Publish
+
+on:
+  schedule:
+    - cron: '10 1 8,23 * *'
+  workflow_dispatch:
+
+jobs:
+  build-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 
+
+      - name: Prepare
+        id: prep
+        run: |
+          DOCKERHUB_IMAGE=cicirello/pyaction
+          GHCR_IMAGE=ghcr.io/${{ github.repository_owner }}/pyaction
+          LATESTTAG=$(git describe --abbrev=0 --tags)
+          VERSION=${LATESTTAG#v}
+          MINOR=${VERSION%.*}
+          MAJOR=${VERSION%%.*}
+          TAGS="${DOCKERHUB_IMAGE}:${MAJOR},${DOCKERHUB_IMAGE}:${MINOR}"
+          TAGS="${TAGS},${DOCKERHUB_IMAGE}:${VERSION},${DOCKERHUB_IMAGE}:latest"
+          TAGS="${TAGS},${GHCR_IMAGE}:${MAJOR},${GHCR_IMAGE}:${MINOR}"
+          TAGS="${TAGS},${GHCR_IMAGE}:${VERSION},${GHCR_IMAGE}:latest"
+          echo ::set-output name=tags::${TAGS}
+          echo ::set-output name=version::${VERSION}
+          echo ::set-output name=dockerhub_image::${DOCKERHUB_IMAGE}
+          echo ::set-output name=ghcr_image::${GHCR_IMAGE}
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+        with:
+          platforms: all
+
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v1 
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Login to Github Container Registry
+        uses: docker/login-action@v1 
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: ./Dockerfile
+          platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v6,linux/arm/v7
+          push: true
+          tags: ${{ steps.prep.outputs.tags }}
+          labels: org.opencontainers.image.version=${{ steps.prep.outputs.version }}
+
