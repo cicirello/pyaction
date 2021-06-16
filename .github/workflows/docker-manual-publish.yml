@@ -61,8 +61,8 @@ jobs:
           builder: ${{ steps.buildx.outputs.name }}
           context: .
           file: ./Dockerfile
-          platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v6,linux/arm/v7
+          platforms: linux/amd64,linux/arm64,linux/s390x,linux/386,linux/arm/v6,linux/arm/v7
           push: true
           tags: ${{ steps.prep.outputs.tags }}
           labels: org.opencontainers.image.version=${{ steps.prep.outputs.version }}
-
+# Fails on linux/ppc64le, beginning Alpine 3.14.0
