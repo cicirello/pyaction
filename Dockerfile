@@ -8,7 +8,6 @@ LABEL maintainer="development@cicirello.org" \
     org.opencontainers.image.authors="Vincent A Cicirello, development@cicirello.org, https://www.cicirello.org/" \
     org.opencontainers.image.source="https://github.com/cicirello/pyaction" \
     org.opencontainers.image.title="pyaction" 
-RUN apk update && apk add \
+RUN apk --no-cache add \
     git \
-    python3 \
-    && rm -rf /var/cache/apk/*
+    python3 
