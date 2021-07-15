@@ -79,13 +79,13 @@ Container Registry. You can use it in the following ways.
 Pull the latest image from Docker Hub with the following (replace `latest` with 
 a specific version number if you prefer):
 
-```
+```Shell
 docker pull cicirello/pyaction:latest
 ```
 
 Pull from the Github Container Registry with:
 
-```
+```Shell
 docker pull ghcr.io/cicirello/pyaction:latest
 ```
 
