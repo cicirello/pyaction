@@ -5,7 +5,7 @@ A base Docker image for Github Actions implemented in Python
 [![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/cicirello/pyaction?logo=docker)](https://hub.docker.com/r/cicirello/pyaction)
 [![Docker Pulls](https://img.shields.io/docker/pulls/cicirello/pyaction?logo=docker)](https://hub.docker.com/r/cicirello/pyaction)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/cicirello/pyaction?logo=github)](https://github.com/cicirello/pyaction/releases)
-[![build](https://github.com/cicirello/pyaction/workflows/build/badge.svg)](https://github.com/cicirello/user-statistician/actions/workflows/docker-image.yml)
+[![build](https://github.com/cicirello/pyaction/workflows/build/badge.svg)](https://github.com/cicirello/pyaction/actions/workflows/docker-image.yml)
 [![License](https://img.shields.io/github/license/cicirello/pyaction)](https://github.com/cicirello/pyaction/blob/master/LICENSE)
 
 ## Summary
