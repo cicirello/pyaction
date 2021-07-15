@@ -11,51 +11,68 @@ A base Docker image for Github Actions implemented in Python
 ## Summary
 
 This Docker image is designed to support implementing Github Actions 
-with Python. It uses Alpine Linux as a base to keep the image relatively
-small for faster loading of the Github Action. It then adds git 
-and Python 3. By using a prebuilt image, it prevents the Github Action
-from requiring an installation of python each time the action runs. It
-is not limited to use with Github Actions, so other use-cases where you
-need git and python are applicable.
+with Python. As of version 4.0.0., it starts with 
+the [official python docker image](https://hub.docker.com/_/python) as the base,
+which is a Debian OS. It specifically uses python:3-slim to keep the image size 
+down for faster loading of Github Actions that use pyaction. On top of the 
+base, we've installed [curl](https://curl.se/), 
+[gpg](https://gnupg.org/), [git](https://git-scm.com/), and the 
+[GitHub CLI](https://cli.github.com/). We added curl and gpg because they
+are needed to install the GitHub CLI, and they may come in handy anyway 
+(especially curl) when implementing a GitHub Action.
+
+Note: Up through pyaction:3.14.0, we previously used Alpine Linux. However,
+the GitHub CLI isn't currently supported on Alpine, which is why we have
+switched the base image.
 
 ## Multiplatform Image
 
-pyaction has the following platforms available:
+__Version 4.0.0 and Newer__: pyaction supports the following 
+platforms:
 * linux/386
 * linux/amd64
-* linux/arm/v6
 * linux/arm/v7
 * linux/arm64
+
+__Version 3.14.0 and Earlier__: earlier releases supported the
+above as well as the following (these are not supported by the GitHub CLI
+at the present time):
+* linux/arm/v6
 * linux/ppc64le
 * linux/s390x 
 
 ## Source Repository and Builds
 
-The [source repository](https://github.com/cicirello/pyaction) is maintained on GitHub.  The images are built on Github and pushed to [Docker Hub](https://hub.docker.com/r/cicirello/pyaction), as well as the [Github Container Registry](https://github.com/cicirello?ecosystem=container&tab=packages) using Github Actions.
+The [source repository](https://github.com/cicirello/pyaction) is 
+maintained on GitHub. The images are built on Github and pushed 
+to [Docker Hub](https://hub.docker.com/r/cicirello/pyaction), as 
+well as the 
+[Github Container Registry](https://github.com/cicirello?ecosystem=container&tab=packages) 
+using Github Actions.
+
+We have twice monthly, automated builds so that we can pick up any
+updates to the base image, such as Python updates, as well as any updates
+to the GitHub CLI, etc.
 
 ## Docker Tags and Versioning Scheme
 
-Each image pushed to Docker Hub and the Github Container Registry is tagged as follows:
-* The tag `latest` indicates, well, the latest image.
-* Tags of the form MAJOR.MINOR.PATCH (such as 3.13.5) indicate the SemVer of 
-  the __Alpine__ image used as the base.
-* Tags of the form MAJOR.MINOR (e.g., 3.13) correspond to the most recent patch level of
-  the __Alpine__ image used as the base. For example, if 3.13.5 is the latest
-  release, then 3.13 maps to this as well.
-* Tags of the form MAJOR (e.g., 3) correspond to the most recent patch level of
-  the __Alpine__ image used as the base, with major corresponding major version. 
-  For example, if 3.13.5 is the latest release, then 3 maps to this as well.
-
+We use [Semantic Versioning](https://semver.org/) for our tags.
 [Semantic Versioning](https://semver.org/) uses version numbers 
 of the form: MAJOR.MINOR.PATCH, where differences in 
 MAJOR correspond to incompatible changes, differences in MINOR 
 correspond to introduction of backwards compatible new functionality, 
 and PATCH corresponds to backwards compatible bug fixes.
 
+Each image pushed to Docker Hub and the Github Container Registry is tagged as follows:
+* The tag `latest` indicates, well, the latest image.
+* Tags of the form MAJOR.MINOR.PATCH (e.g., 4.0.0).
+* Tags of the form MAJOR.MINOR (e.g., 4.0).
+* Tags of the form MAJOR (e.g., 4).
 
 ## Installation and Usage
 
-The pre-built image is hosted on both Docker Hub and the Github Container Registry. You can use it in the following ways.
+The pre-built image is hosted on both Docker Hub and the Github 
+Container Registry. You can use it in the following ways.
 
 ### Docker Pull Command
 
@@ -94,25 +111,23 @@ FROM ghcr.io/cicirello/pyaction:latest
 
 
 ## License
+
 ### Source Code License
 The source code, including the Dockerfile and anything
-else within the [Github repository for pyaction](https://github.com/cicirello/pyaction), is licensed under the
+else within the [Github repository for pyaction](https://github.com/cicirello/pyaction), 
+is licensed under the
 [MIT License](https://github.com/cicirello/pyaction/blob/master/LICENSE).
 
 ### Image Licenses
 As with all pre-built Docker images, the image itself (once built, or obtained from
 Docker Hub or the Github Container Registry) contains software that is covered by a
-variety of licenses. Since the base image is Alpine, this would include
-the [licenses of the components of Alpine](https://pkgs.alpinelinux.org/),
+variety of licenses. See the license information for the 
+[python docker image](https://hub.docker.com/_/python),
 the [license for git](https://git-scm.com/), 
-and the [licenses for Python](https://docs.python.org/3/license.html).  
+the [GitHub CLI](https://github.com/cli/cli/blob/trunk/LICENSE),
+and the [license for Python](https://docs.python.org/3/license.html).  
 
 If you build and distribute an image containing your software, 
 using pyaction as the base image, it
 is your responsibility to follow the licenses of all of the
 software contained within the image.  
-
-
-
-
-
