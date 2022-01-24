@@ -1,8 +1,6 @@
 name: Docker Manual Publish
 
 on:
-  schedule:
-    - cron: '10 1 8,23 * *'
   workflow_dispatch:
 
 jobs:
