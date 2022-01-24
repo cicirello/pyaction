@@ -21,4 +21,4 @@ jobs:
     - name: Use image to run Python program and check app versions to verify installation
       run: |
         pwd
-        docker run --rm --name versioncheck -w /home/runner/work/pyaction/pyaction pyactioncheck python version-check/versions.py
+        docker run --rm --name versioncheck -v /home/runner/work/pyaction/pyaction:/pyaction -w /pyaction pyactioncheck python version-check/versions.py
