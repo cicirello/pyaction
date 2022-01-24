@@ -20,6 +20,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [4.1.0] - 2022-01-24
+
+Note that 4.1.0 is the same as 4.0.0 in what is included in the image. The purpose
+of this release includes changing the tag used for the base docker image to specify
+a specific release of python, in this case `3.10.2-slim`, whereas previously it was
+specified more generally as `3-slim`. We have also changed our CI/CD related workflows
+to include a script that monitors daily for available updates to the GitHub CLI, git, curl, and
+gpg. From this point onward, we are taking a more deliberative approach to pushing new
+images, such as when one or more of these have new versions available, and we will bump
+the version number of pyaction when this occurs.
+
+The versions included in pyaction 4.1.0 are as follows:
+* Python 3.10.2 (a python 3.10.2-slim base docker image)
+* GitHub CLI 2.4.0
+* git 2.30.2
+* curl 7.74.0
+* gpg 2.2.27
   
 ### Changed
 * Base Docker image is still a Python 3 Slim, but it is now fixed to
