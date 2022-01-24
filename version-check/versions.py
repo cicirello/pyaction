@@ -41,11 +41,47 @@ def executeCommand(arguments) :
         )
     return result.stdout.strip(), result.returncode
 
+def parse_gh_version(gh) :
+    """Parses the version number for gh.
+
+    Keyword arguments:
+    gh - The result of querying the version from gh.
+    """
+    return gh.split()[2]
+
+def parse_git_version(git) :
+    """Parses the version number for git.
+
+    Keyword arguments:
+    git - The result of querying the version from git.
+    """
+    return git.split()[2]
+
+def parse_curl_version(curl) :
+    """Parses the version number for curl.
+
+    Keyword arguments:
+    curl - The result of querying the version from curl.
+    """
+    return curl.split()[1]
+
+def parse_gpg_version(gpg) :
+    """Parses the version number for gpg.
+
+    Keyword arguments:
+    gpg - The result of querying the version from gpg.
+    """
+    return gpg.split()[2]
+
 if __name__ == "__main__" :
     gh, code = executeCommand(["gh", "--version"])
+    gh = parse_gh_version(gh)
     git, code = executeCommand(["git", "--version"])
+    git = parse_git_version(git)
     curl, code = executeCommand(["curl", "-V"])
+    curl = parse_curl_version(curl)
     gpg, code = executeCommand(["gpg", "--version"])
+    gpg = parse_gpg_version(gpg)
     print("gh version:")
     print(gh)
     print("git version:")
