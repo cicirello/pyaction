@@ -9,6 +9,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
   
 ### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### CI/CD
+
+
+## [4.1.0] - 2022-01-24
+  
+### Changed
 * Base Docker image is still a Python 3 Slim, but it is now fixed to
   a specific version, in this case 3.10.2-slim.
 * Eliminated the twice-monthly automated builds to current tags to enable
@@ -16,12 +29,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   image.
 * New release policy is to release a new image when the versions of one or more
   of python, git, gh, curl, or gpg are bumped.
-
-### Deprecated
-
-### Removed
-
-### Fixed
 
 ### CI/CD
 * Now performs daily builds, which includes using the image to run a simple Python program
