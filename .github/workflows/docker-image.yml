@@ -14,5 +14,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+
     - name: Build the Docker image
-      run: docker build . --file Dockerfile
+      run: docker build -t pyactioncheck .
+
+    - name: Use image to run Python program and check app versions to verify installation
+      run: docker run -it --rm --name versioncheck pyactioncheck python version-check/versions.py
