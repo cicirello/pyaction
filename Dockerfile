@@ -1,10 +1,10 @@
-# Copyright (c) 2020-2021 Vincent A. Cicirello
+# Copyright (c) 2020-2022 Vincent A. Cicirello
 # https://www.cicirello.org
 # Source repository: https://github.com/cicirello/pyaction
 # Source licensed under the MIT License: https://github.com/cicirello/pyaction/blob/master/LICENSE
 
-# Base image is Python 3 Slim
-FROM python:3-slim
+# Base image is a Python 3 Slim image
+FROM python:3.10.2-slim
 
 LABEL maintainer="development@cicirello.org" \
     org.opencontainers.image.description="A base Docker image for Github Actions implemented in Python" \
