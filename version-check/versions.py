@@ -27,6 +27,7 @@
 
 import json
 import subprocess
+import platform
 
 def executeCommand(arguments) :
     """Execute a subprocess and return result and exit code.
@@ -82,11 +83,17 @@ if __name__ == "__main__" :
     curl = parse_curl_version(curl)
     gpg, code = executeCommand(["gpg", "--version"])
     gpg = parse_gpg_version(gpg)
-    print("gh version:")
-    print(gh)
-    print("git version:")
-    print(git)
-    print("curl version:")
-    print(curl)
-    print("gpg version:")
-    print(gpg)
+    print("gh version:", gh)
+    print("git version:", git)
+    print("curl version:", curl)
+    print("gpg version:", gpg)
+    print("python version", platform.python_version())
+    versions = {
+        "gh" : gh,
+        "git" : git,
+        "curl" : curl,
+        "gpg" : gpg,
+        "python" : platform.python_version()
+    }
+    with open("versions.json", "w") as f :
+        json.dump(versions, f, sort_keys=True, indent=2)
