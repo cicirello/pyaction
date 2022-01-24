@@ -5,6 +5,7 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+  workflow_dispatch:
 
 jobs:
 
@@ -22,3 +23,13 @@ jobs:
       run: |
         pwd
         docker run --rm --name versioncheck -v /home/runner/work/pyaction/pyaction:/pyaction -w /pyaction pyactioncheck python version-check/versions.py
+
+    - name: Create Pull Request
+      if: ${{ github.event_name != 'pull_request' }}
+      uses: peter-evans/create-pull-request@v3.12.0
+      with:
+        title: "Automated update: versions.json"
+        commit-message: "Automated update: versions.json"
+        author: Vincent A. Cicirello <cicirello@users.noreply.github.com>
+        committer: Vincent A. Cicirello <cicirello@users.noreply.github.com>
+        delete-branch: true
