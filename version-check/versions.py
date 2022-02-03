@@ -122,7 +122,7 @@ def updateChangelog(priorVersions, versions) :
                 changedEndsAt = i - 1
             elif unreleasedLineNumber != None and line.strip().startswith("### Changed") :
                 changedStartsAt = i + 1
-        contents[unreleasedLineNumber] = "## [Unreleased] - " + datetime.today().strftime('%Y-%m-%d')
+        contents[unreleasedLineNumber] = "## [Unreleased] - {0}\n".format(datetime.today().strftime('%Y-%m-%d'))
         changedContents = findChanges(priorVersions, versions)
         updatedLogLines = set()
         for i in range(changedStartsAt, changedEndsAt) :
