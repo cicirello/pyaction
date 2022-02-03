@@ -30,8 +30,8 @@ jobs:
       if: ${{ github.event_name != 'pull_request' }}
       uses: peter-evans/create-pull-request@v3.12.1
       with:
-        title: "Automated update: versions.json"
-        commit-message: "Automated update: versions.json"
+        title: "Automated update"
+        commit-message: "Updated versions.json and changelog.md"
         author: Vincent A. Cicirello <cicirello@users.noreply.github.com>
         committer: Vincent A. Cicirello <cicirello@users.noreply.github.com>
         delete-branch: true
