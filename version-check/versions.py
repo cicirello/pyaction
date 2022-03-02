@@ -112,16 +112,21 @@ def updateChangelog(priorVersions, versions) :
     """
     with open("CHANGELOG.md", "r+") as f :
         contents = f.readlines()
-        unreleasedLineNumber = None
-        changedStartsAt = None
-        changedEndsAt = None
-        for i, line in enumerate(contents) :
-            if unreleasedLineNumber == None and line.strip().startswith("## [Unreleased]") :
+        for i in range(len(contents)) :
+            line = contents[i]
+            if line.strip().startswith("## [Unreleased]") :
                 unreleasedLineNumber = i
-            elif changedStartsAt != None and line.strip().startswith("###") :
-                changedEndsAt = i - 1
-            elif unreleasedLineNumber != None and line.strip().startswith("### Changed") :
+                break
+        for i in range(unreleasedLineNumber + 1, len(contents)) :
+            line = contents[i]
+            if line.strip().startswith("### Changed") :
                 changedStartsAt = i + 1
+                break
+        for i in range(changedStartsAt + 1, len(contents)) :
+            line = contents[i]
+            if line.strip().startswith("###") :
+                changedEndsAt = i - 1
+                break
         contents[unreleasedLineNumber] = "## [Unreleased] - {0}\n".format(datetime.today().strftime('%Y-%m-%d'))
         changedContents = findChanges(priorVersions, versions)
         updatedLogLines = set()
