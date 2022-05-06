@@ -30,7 +30,7 @@ jobs:
           echo ::set-output name=ghcr_image::${GHCR_IMAGE}
 
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v1
+        uses: docker/setup-qemu-action@v2
         with:
           platforms: all
 
