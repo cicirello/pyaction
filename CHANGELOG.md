@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   
 ### Changed
 * Bumped Python to 3.10.5.
-* Bumped GitHub CLI to 2.11.3.
+* Bumped GitHub CLI to 2.12.0.
 
 ### Deprecated
 
