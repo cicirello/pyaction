@@ -23,7 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   
 ### Changed
 * Bumped Python to 3.10.5.
-* Bumped GitHub CLI to 2.12.0.
+* Bumped GitHub CLI to 2.12.1.
 
 
 ## [4.4.0] - 2022-05-06
