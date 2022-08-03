@@ -4,7 +4,7 @@
 # Source licensed under the MIT License: https://github.com/cicirello/pyaction/blob/master/LICENSE
 
 # Base image is a Python 3 Slim image
-FROM python:3.10.5-slim
+FROM python:3.11.0b5-slim
 
 LABEL maintainer="development@cicirello.org" \
     org.opencontainers.image.description="A base Docker image for Github Actions implemented in Python" \
