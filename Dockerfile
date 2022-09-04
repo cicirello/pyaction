@@ -19,9 +19,8 @@ RUN true \
     && apt-get update && apt-get install -y \
        curl \
        gpg \
-    && t="/tmp/gh-$$.deb" && curl -sSLo "$t" "https://github.com$(curl -sSL "https://github.com/cli/cli/releases/latest" | grep -Po "(?<=href=\")/cli/cli/releases/download/[^\"]*$(dpkg --print-architecture)[.]deb(?=\")")" && apt install "$t" && rm "$t" \  
-    && apt-get update && apt-get install -y \
        git \
+    && t="/tmp/gh-$$.deb" && curl -sSLo "$t" "https://github.com$(curl -sSL "https://github.com/cli/cli/releases/latest" | grep -Po "(?<=href=\")/cli/cli/releases/download/[^\"]*$(dpkg --print-architecture)[.]deb(?=\")")" && apt install "$t" && rm "$t" \  
     && rm -rf /var/lib/apt/lists/* \
     && true
 
