@@ -16,7 +16,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 ### Fixed
-* Install GitHub CLI from its releases to deal with [cli/cli#6175](https://github.com/cli/cli/issues/6175).
 
 ### CI/CD
 
