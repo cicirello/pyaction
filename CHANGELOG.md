@@ -9,7 +9,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
   
 ### Changed
-* Bumped Python to 3.10.7.
 
 ### Deprecated
 
@@ -18,6 +17,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 ### CI/CD
+
+
+## [4.8.1] - 2022-09-08
+  
+### Changed
+* Bumped Python to 3.10.7.
 
 
 ## [4.8.0] - 2022-09-07
