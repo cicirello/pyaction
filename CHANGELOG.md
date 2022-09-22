@@ -20,8 +20,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [4.9.0] - 2022-09-22
-
-### Added
   
 ### Changed
 * Bumped GitHub CLI to 2.16.0.
