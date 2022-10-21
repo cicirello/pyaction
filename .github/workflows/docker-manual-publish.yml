@@ -26,10 +26,10 @@ jobs:
           TAGS="${TAGS},${DOCKERHUB_IMAGE}:${VERSION},${DOCKERHUB_IMAGE}:latest"
           TAGS="${TAGS},${GHCR_IMAGE}:${MAJOR},${GHCR_IMAGE}:${MINOR}"
           TAGS="${TAGS},${GHCR_IMAGE}:${VERSION},${GHCR_IMAGE}:latest"
-          echo ::set-output name=tags::${TAGS}
-          echo ::set-output name=version::${VERSION}
-          echo ::set-output name=dockerhub_image::${DOCKERHUB_IMAGE}
-          echo ::set-output name=ghcr_image::${GHCR_IMAGE}
+          echo "tags=${TAGS}" >> $GITHUB_OUTPUT
+          echo "version=${VERSION}" >> $GITHUB_OUTPUT
+          echo "dockerhub_image=${DOCKERHUB_IMAGE}" >> $GITHUB_OUTPUT
+          echo "ghcr_image=${GHCR_IMAGE}" >> $GITHUB_OUTPUT
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
