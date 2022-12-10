@@ -9,8 +9,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
   
 ### Changed
-* Bumped Python to 3.11.1.
-* Bumped GitHub CLI to 2.20.2.
 
 ### Deprecated
 
@@ -19,6 +17,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 ### CI/CD
+
+
+## [4.13.1] - 2022-12-10
+
+### Changed
+* Bumped Python to 3.11.1.
+* Bumped GitHub CLI to 2.20.2.
 
 
 ## [4.13.0] - 2022-11-09
