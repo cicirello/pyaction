@@ -22,9 +22,7 @@ base, we've installed [curl](https://curl.se/),
 are needed to install the GitHub CLI, and they may come in handy anyway 
 (especially curl) when implementing a GitHub Action.
 
-Note: Up through pyaction:3.14.0, we previously used Alpine Linux. However,
-the GitHub CLI isn't currently supported on Alpine, which is why we have
-switched the base image.
+__Blog Post on DEV:__ [pyaction: A Docker container with Python, git, and the GitHub CLI](https://dev.to/cicirello/pyaction-a-docker-container-with-python-git-and-the-github-cli-930), posted on December 28, 2022.
 
 ## Multiplatform Image
 
