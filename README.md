@@ -34,8 +34,7 @@ platforms:
 * linux/arm64
 
 __Version 3.14.0 and Earlier__: earlier releases supported the
-above as well as the following (these are not supported by the GitHub CLI
-at the present time):
+above as well as the following:
 * linux/arm/v6
 * linux/ppc64le
 * linux/s390x 
@@ -49,9 +48,13 @@ well as the
 [Github Container Registry](https://github.com/cicirello?ecosystem=container&tab=packages) 
 using Github Actions.
 
-We have twice monthly, automated builds so that we can pick up any
-updates to the base image, such as Python updates, as well as any updates
-to the GitHub CLI, etc.
+Our daily automated CI/CD processes monitor for updates to the Python slim Docker image, the GitHub 
+CLI, etc. Upon detecting such updates, we release an update of pyaction sometimes as 
+early as same day, but possibly a few days later.
+
+See [CHANGELOG](https://github.com/cicirello/pyaction/blob/master/CHANGELOG.md) for details of
+versions of Python, GitHub CLI, git, etc included in each pyaction release.
+
 
 ## Docker Tags and Versioning Scheme
 
