@@ -9,7 +9,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
   
 ### Changed
-* Bumped GitHub CLI to 2.22.0.
 
 ### Deprecated
 
@@ -18,6 +17,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 ### CI/CD
+
+
+## [4.15.0] - 2023-01-26
+
+### Changed
+* Bumped GitHub CLI to 2.22.0.
 
 
 ## [4.14.1] - 2023-01-04
