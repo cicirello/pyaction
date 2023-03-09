@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
   
 ### Changed
-* Bumped GitHub CLI to 2.24.1.
+* Bumped GitHub CLI to 2.24.3.
 
 ### Deprecated
 
