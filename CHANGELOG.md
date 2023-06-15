@@ -7,12 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased] - 2023-06-15
 
 ### Added
-  
+
 ### Changed
-* Bumped git to 2.39.2.
-* Bumped curl to 7.88.1.
-* Bumped gpg to 2.2.40.
-* Bumped Python to 3.11.4.
 
 ### Deprecated
 
@@ -21,6 +17,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 ### CI/CD
+
+
+## [4.21.0] - 2023-06-15
+
+### Changed
+* Bumped git to 2.39.2.
+* Bumped curl to 7.88.1.
+* Bumped gpg to 2.2.40.
+* Bumped Python to 3.11.4.
 
 
 ## [4.20.0] - 2023-05-31
