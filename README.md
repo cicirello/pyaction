@@ -1,5 +1,10 @@
 # pyaction
-A base Docker image for Github Actions implemented in Python
+
+[![pyaction - A Docker container with Python, git, and the GitHub CLI](https://actions.cicirello.org/images/pyaction640.png)](#pyaction)
+
+Website for our GitHub Actions and tools for developing them: https://actions.cicirello.org/
+
+## Summary
 
 | __Docker Hub__ | [![Docker Image Version (latest by date)](https://img.shields.io/docker/v/cicirello/pyaction?label=Docker%20Hub&logo=docker)](https://hub.docker.com/r/cicirello/pyaction) [![Docker Pulls](https://img.shields.io/docker/pulls/cicirello/pyaction?logo=docker)](https://hub.docker.com/r/cicirello/pyaction) |
 | :--- | :--- |
@@ -8,8 +13,6 @@ A base Docker image for Github Actions implemented in Python
 | __Build Status__ | [![build](https://github.com/cicirello/pyaction/workflows/build/badge.svg)](https://github.com/cicirello/pyaction/actions/workflows/docker-image.yml) |
 | __License__ | [![License](https://img.shields.io/github/license/cicirello/pyaction)](LICENSE) |
 | __Support__ | [![GitHub Sponsors](https://img.shields.io/badge/sponsor-30363D?logo=GitHub-Sponsors&logoColor=#EA4AAA)](https://github.com/sponsors/cicirello) [![Liberapay](https://img.shields.io/badge/Liberapay-F6C915?logo=liberapay&logoColor=black)](https://liberapay.com/cicirello) [![Ko-Fi](https://img.shields.io/badge/Ko--fi-F16061?logo=ko-fi&logoColor=white)](https://ko-fi.com/cicirello) |
-
-## Summary
 
 This Docker image is designed to support implementing Github Actions 
 with Python. As of version 4.0.0., it starts with 
