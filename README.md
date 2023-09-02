@@ -25,7 +25,7 @@ base, we've installed [curl](https://curl.se/),
 are needed to install the GitHub CLI, and they may come in handy anyway 
 (especially curl) when implementing a GitHub Action.
 
-__Blog Post on DEV:__ [pyaction: A Docker container with Python, git, and the GitHub CLI](https://dev.to/cicirello/pyaction-a-docker-container-with-python-git-and-the-github-cli-930), posted on December 28, 2022.
+__Blog Post on DEV:__ [pyaction: A Docker container with Python, git, and the GitHub CLI](https://dev.to/cicirello/pyaction-a-docker-container-with-python-git-and-the-github-cli-930), posted on December 28, 2022. See a [list of additional blog posts](#blog-posts) later in this README.
 
 ## Multiplatform Image
 
@@ -114,6 +114,12 @@ FROM ghcr.io/cicirello/pyaction:latest
 # The rest of your Dockerfile would go here.
 ```
 
+## Blog Posts
+
+Here are a few blog posts about the pyaction container listed in reverse chronological order:
+* [Celebrating over 2 million pulls of pyaction from the GitHub Container Registry](https://dev.to/cicirello/celebrating-over-2-million-pulls-of-pyaction-from-the-github-container-registry-20hb), posted on September 2, 2023.
+* [pyaction: Over 1 million pulls from the GitHub Container Registry](https://dev.to/cicirello/pyaction-over-1-million-pulls-from-the-github-container-registry-29ag), posted on February 16, 2023.
+* [pyaction: A Docker container with Python, git, and the GitHub CLI](https://dev.to/cicirello/pyaction-a-docker-container-with-python-git-and-the-github-cli-930), posted on December 28, 2022.
 
 ## License
 
