@@ -33,12 +33,12 @@ __Version 4.0.0 and Newer__: pyaction supports the following
 platforms:
 * linux/386
 * linux/amd64
-* linux/arm/v7
 * linux/arm64
+* linux/arm/v7
+* linux/arm/v6
 
 __Version 3.14.0 and Earlier__: earlier releases supported the
 above as well as the following:
-* linux/arm/v6
 * linux/ppc64le
 * linux/s390x 
 
