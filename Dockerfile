@@ -1,4 +1,4 @@
-# Copyright (c) 2020-2024 Vincent A. Cicirello
+# Copyright (c) 2020-2025 Vincent A. Cicirello
 # https://www.cicirello.org
 # Source repository: https://github.com/cicirello/pyaction
 # Source licensed under the MIT License: https://github.com/cicirello/pyaction/blob/master/LICENSE

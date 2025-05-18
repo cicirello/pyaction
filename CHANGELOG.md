@@ -4,13 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased] - 2025-05-16
+## [Unreleased] - 2025-05-18
 
 ### Added
 
 ### Changed
-* Bumped Python to 3.13.3.
-* Bumped GitHub CLI to 2.72.0.
 
 ### Deprecated
 
@@ -19,6 +17,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 ### CI/CD
+
+
+## [4.33.0] - 2025-05-18
+
+### Changed
+* Bumped Python to 3.13.3.
+* Bumped GitHub CLI to 2.72.0.
 
 
 ## [4.32.0] - 2024-09-25
