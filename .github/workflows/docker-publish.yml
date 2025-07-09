@@ -13,6 +13,7 @@ on:
 
 jobs:
   build-push:
+    needs: python-3-12
     runs-on: ubuntu-latest
 
     steps:
@@ -33,14 +34,14 @@ jobs:
           TAGS="${TAGS},${DOCKERHUB_IMAGE}:${PYTHON_MINOR}-gh-${VERSION}"
           TAGS="${TAGS},${DOCKERHUB_IMAGE}:${PYTHON_VERSION}-gh-${MAJOR},${DOCKERHUB_IMAGE}:${PYTHON_VERSION}-gh-${MINOR}"
           TAGS="${TAGS},${DOCKERHUB_IMAGE}:${PYTHON_VERSION}-gh-${VERSION}"
-          TAGS="${TAGS},${DOCKERHUB_IMAGE}:${MAJOR},${DOCKERHUB_IMAGE}:${MINOR}"
-          TAGS="${TAGS},${DOCKERHUB_IMAGE}:${VERSION},${DOCKERHUB_IMAGE}:latest"
+          TAGS="${TAGS},${DOCKERHUB_IMAGE}:${PYTHON_MINOR}"
+          TAGS="${TAGS},${DOCKERHUB_IMAGE}:${PYTHON_VERSION},${DOCKERHUB_IMAGE}:latest"
           TAGS="${TAGS},${GHCR_IMAGE}:${PYTHON_MINOR}-gh-${MAJOR},${GHCR_IMAGE}:${PYTHON_MINOR}-gh-${MINOR}"
           TAGS="${TAGS},${GHCR_IMAGE}:${PYTHON_MINOR}-gh-${VERSION}"
           TAGS="${TAGS},${GHCR_IMAGE}:${PYTHON_VERSION}-gh-${MAJOR},${GHCR_IMAGE}:${PYTHON_VERSION}-gh-${MINOR}"
           TAGS="${TAGS},${GHCR_IMAGE}:${PYTHON_VERSION}-gh-${VERSION}"
-          TAGS="${TAGS},${GHCR_IMAGE}:${MAJOR},${GHCR_IMAGE}:${MINOR}"
-          TAGS="${TAGS},${GHCR_IMAGE}:${VERSION},${GHCR_IMAGE}:latest"
+          TAGS="${TAGS},${GHCR_IMAGE}:${PYTHON_MINOR}"
+          TAGS="${TAGS},${GHCR_IMAGE}:${PYTHON_VERSION},${GHCR_IMAGE}:latest"
           echo "tags=${TAGS}" >> $GITHUB_OUTPUT
           echo "version=${VERSION}" >> $GITHUB_OUTPUT
           echo "dockerhub_image=${DOCKERHUB_IMAGE}" >> $GITHUB_OUTPUT
@@ -80,7 +81,7 @@ jobs:
           labels: org.opencontainers.image.version=${{ steps.prep.outputs.version }}
 
   python-3-12:
-    needs: build-push
+    needs: python-3-11
     runs-on: ubuntu-latest
 
     steps:
@@ -141,7 +142,7 @@ jobs:
           labels: org.opencontainers.image.version=${{ steps.prep.outputs.version }}
 
   python-3-11:
-    needs: python-3-12
+    needs: python-3-10
     runs-on: ubuntu-latest
 
     steps:
@@ -202,7 +203,7 @@ jobs:
           labels: org.opencontainers.image.version=${{ steps.prep.outputs.version }}
 
   python-3-10:
-    needs: python-3-11
+    needs: python-3-9
     runs-on: ubuntu-latest
 
     steps:
@@ -263,7 +264,7 @@ jobs:
           labels: org.opencontainers.image.version=${{ steps.prep.outputs.version }}
 
   python-3-9:
-    needs: python-3-10
+    needs: python-3-8
     runs-on: ubuntu-latest
 
     steps:
@@ -324,7 +325,6 @@ jobs:
           labels: org.opencontainers.image.version=${{ steps.prep.outputs.version }}
 
   python-3-8:
-    needs: python-3-9
     runs-on: ubuntu-latest
 
     steps:
