@@ -8,16 +8,15 @@ Website for our GitHub Actions and tools for developing them: https://actions.ci
 
 | __Docker Hub__ | [![Docker Image Version (latest by date)](https://img.shields.io/docker/v/cicirello/pyaction?label=Docker%20Hub&logo=docker)](https://hub.docker.com/r/cicirello/pyaction) [![Docker Pulls](https://img.shields.io/docker/pulls/cicirello/pyaction?logo=docker)](https://hub.docker.com/r/cicirello/pyaction) |
 | :--- | :--- |
-| __GitHub__ | [![GitHub Container Registry (latest by date)](https://ghcr-badge.egpl.dev/cicirello/pyaction/latest_tag?label=ghcr.io&color=%23007ec6&ignore=latest,3.12*,2*)](https://github.com/cicirello/pyaction/releases) |
+| __GitHub__ | [![GitHub Container Registry (latest by date)](https://ghcr-badge.egpl.dev/cicirello/pyaction/latest_tag?label=ghcr.io&color=%23007ec6&ignore=latest,3.12*,2*)](https://github.com/cicirello/pyaction/pkgs/container/pyaction) |
 | __Image Stats__ | [![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/cicirello/pyaction?logo=docker)](https://hub.docker.com/r/cicirello/pyaction) |
 | __Build Status__ | [![build](https://github.com/cicirello/pyaction/workflows/build/badge.svg)](https://github.com/cicirello/pyaction/actions/workflows/docker-image.yml) |
 | __License__ | [![License](https://img.shields.io/github/license/cicirello/pyaction)](LICENSE) |
 | __Support__ | [![GitHub Sponsors](https://img.shields.io/badge/sponsor-30363D?logo=GitHub-Sponsors&logoColor=#EA4AAA)](https://github.com/sponsors/cicirello) [![Liberapay](https://img.shields.io/badge/Liberapay-F6C915?logo=liberapay&logoColor=black)](https://liberapay.com/cicirello) [![Ko-Fi](https://img.shields.io/badge/Ko--fi-F16061?logo=ko-fi&logoColor=white)](https://ko-fi.com/cicirello) |
 
 This Docker image is designed to support implementing Github Actions 
-with Python. As of version 4.0.0., it starts with 
-the [official python docker image](https://hub.docker.com/_/python) as the base,
-which is a Debian OS. It specifically uses python:3-slim to keep the image size 
+with Python. It starts with the [official python docker image](https://hub.docker.com/_/python) 
+as the base, which is a Debian OS. It specifically uses python:3-slim to keep the image size 
 down for faster loading of Github Actions that use pyaction. On top of the 
 base, we've installed [curl](https://curl.se/), 
 [gpg](https://gnupg.org/), [git](https://git-scm.com/), and the 
@@ -29,18 +28,12 @@ __Blog Post on DEV:__ [pyaction: A Docker container with Python, git, and the Gi
 
 ## Multiplatform Image
 
-__Version 4.0.0 and Newer__: pyaction supports the following 
-platforms:
+pyaction supports the following platforms:
 * linux/386
 * linux/amd64
 * linux/arm64
 * linux/arm/v7
 * linux/arm/v6
-
-__Version 3.14.0 and Earlier__: earlier releases supported the
-above as well as the following:
-* linux/ppc64le
-* linux/s390x 
 
 ## Source Repository and Builds
 
@@ -55,8 +48,8 @@ Our daily automated CI/CD processes monitor for updates to the Python slim Docke
 CLI, etc. Upon detecting such updates, we release an update of pyaction sometimes as 
 early as same day, but possibly a few days later.
 
-See [CHANGELOG](https://github.com/cicirello/pyaction/blob/master/CHANGELOG.md) for details of
-versions of Python, GitHub CLI, git, etc included in each pyaction release.
+See [versions.json](https://github.com/cicirello/pyaction/blob/master/versions.json) for details of
+versions of Python, GitHub CLI, git, etc included in the latest build.
 
 
 ## Docker Tags and Versioning Scheme
