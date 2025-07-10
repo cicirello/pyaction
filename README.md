@@ -113,6 +113,7 @@ FROM ghcr.io/cicirello/pyaction:latest
 ## Blog Posts
 
 Here are a few blog posts about the pyaction container listed in reverse chronological order:
+* [pyaction pulled 4 million times and counting from the GitHub Container Registry](https://dev.to/cicirello/pyaction-pulled-4-million-times-and-counting-from-the-github-container-registry-47i3), posted on May 31, 2024.
 * [Celebrating over 2 million pulls of pyaction from the GitHub Container Registry](https://dev.to/cicirello/celebrating-over-2-million-pulls-of-pyaction-from-the-github-container-registry-20hb), posted on September 2, 2023.
 * [pyaction: Over 1 million pulls from the GitHub Container Registry](https://dev.to/cicirello/pyaction-over-1-million-pulls-from-the-github-container-registry-29ag), posted on February 16, 2023.
 * [pyaction: A Docker container with Python, git, and the GitHub CLI](https://dev.to/cicirello/pyaction-a-docker-container-with-python-git-and-the-github-cli-930), posted on December 28, 2022.
