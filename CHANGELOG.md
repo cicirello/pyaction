@@ -21,9 +21,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [5.0.0] - 2025-07-10
 
-**We'll continue to update the Unreleased section above with versions planned
-for next image build, but we will otherwise no longer be updating this Changelog,
-as it doesn't coincide very well with our new tagging scheme.**
+**We'll continue to update the Unreleased section of the Changelog with versions planned
+for next image build, but we will otherwise no longer be updating the Changelog,
+as its structure doesn't coincide very well with our new tagging scheme.**
 
 ### Added
 * New Docker tag scheme based on versions of Python the GitHub CLI contained in the image.
