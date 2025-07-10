@@ -54,18 +54,21 @@ versions of Python, GitHub CLI, git, etc included in the latest build.
 
 ## Docker Tags and Versioning Scheme
 
-We use [Semantic Versioning](https://semver.org/) for our tags.
-[Semantic Versioning](https://semver.org/) uses version numbers 
-of the form: MAJOR.MINOR.PATCH, where differences in 
-MAJOR correspond to incompatible changes, differences in MINOR 
-correspond to introduction of backwards compatible new functionality, 
-and PATCH corresponds to backwards compatible bug fixes.
+For the current version of Python (e.g., 3.13.5) and current version 
+of GitHub CLI (e.g., 2.75.0), all of the following tags are available and equivalent:
+`latest`, `3.13.5`, `3.13`, `3.13.5-gh-2.75.0`, `3.13.5-gh-2.75`, `3.13.5-gh-2`, 
+`3.13-gh-2.75.0`, `3.13-gh-2.75`, `3.13-gh-2`.
 
-Each image pushed to Docker Hub and the Github Container Registry is tagged as follows:
-* The tag `latest` indicates, well, the latest image.
-* Tags of the form MAJOR.MINOR.PATCH (e.g., 4.0.0).
-* Tags of the form MAJOR.MINOR (e.g., 4.0).
-* Tags of the form MAJOR (e.g., 4).
+For prior versions of Python (3.8, 3.9, 3.10, 3.11, 3.12) and current version of 
+GitHub CLI (2.75.0), all of the following tags are available and equivalent: 
+`3.12`, `3.12-gh-2.75.0`, `3.12-gh-2.75`, `3.12-gh-2`.
+
+This tag scheme began with version 2.75.0 of the GitHub CLI. We don't support pyaction
+images with earlier versions of the GitHub CLI.
+
+This tag scheme began with Python 3.13.5. Python patch level tags are not available for
+pyaction prior to Python 3.13.5.
+
 
 ## Installation and Usage
 
