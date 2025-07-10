@@ -4,13 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased] - 2025-07-09
+## [Unreleased] - 2025-07-10
 
 ### Added
 
 ### Changed
-* Bumped Python to 3.13.5.
-* Bumped GitHub CLI to 2.75.0.
 
 ### Deprecated
 
@@ -19,6 +17,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 ### CI/CD
+
+
+## [5.0.0] - 2025-07-10
+
+**We'll continue to update the Unreleased section of the Changelog with versions planned
+for next image build, but we will otherwise no longer be updating the Changelog,
+as its structure doesn't coincide very well with our new tagging scheme.**
+
+### Added
+* New Docker tag scheme based on versions of Python the GitHub CLI contained in the image.
+
+### Changed
+* Bumped Python to 3.13.5.
+* Bumped GitHub CLI to 2.75.0.
 
 
 ## [4.33.0] - 2025-05-18

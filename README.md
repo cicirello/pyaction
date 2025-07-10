@@ -8,16 +8,15 @@ Website for our GitHub Actions and tools for developing them: https://actions.ci
 
 | __Docker Hub__ | [![Docker Image Version (latest by date)](https://img.shields.io/docker/v/cicirello/pyaction?label=Docker%20Hub&logo=docker)](https://hub.docker.com/r/cicirello/pyaction) [![Docker Pulls](https://img.shields.io/docker/pulls/cicirello/pyaction?logo=docker)](https://hub.docker.com/r/cicirello/pyaction) |
 | :--- | :--- |
-| __GitHub__ | [![GitHub release (latest by date)](https://img.shields.io/github/v/release/cicirello/pyaction?logo=github)](https://github.com/cicirello/pyaction/releases) |
+| __GitHub__ | [![GitHub Container Registry (latest by date)](https://ghcr-badge.egpl.dev/cicirello/pyaction/latest_tag?label=ghcr.io&color=%23007ec6&ignore=latest,3.12*,2*)](https://github.com/cicirello/pyaction/pkgs/container/pyaction) |
 | __Image Stats__ | [![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/cicirello/pyaction?logo=docker)](https://hub.docker.com/r/cicirello/pyaction) |
 | __Build Status__ | [![build](https://github.com/cicirello/pyaction/workflows/build/badge.svg)](https://github.com/cicirello/pyaction/actions/workflows/docker-image.yml) |
 | __License__ | [![License](https://img.shields.io/github/license/cicirello/pyaction)](LICENSE) |
 | __Support__ | [![GitHub Sponsors](https://img.shields.io/badge/sponsor-30363D?logo=GitHub-Sponsors&logoColor=#EA4AAA)](https://github.com/sponsors/cicirello) [![Liberapay](https://img.shields.io/badge/Liberapay-F6C915?logo=liberapay&logoColor=black)](https://liberapay.com/cicirello) [![Ko-Fi](https://img.shields.io/badge/Ko--fi-F16061?logo=ko-fi&logoColor=white)](https://ko-fi.com/cicirello) |
 
 This Docker image is designed to support implementing Github Actions 
-with Python. As of version 4.0.0., it starts with 
-the [official python docker image](https://hub.docker.com/_/python) as the base,
-which is a Debian OS. It specifically uses python:3-slim to keep the image size 
+with Python. It starts with the [official python docker image](https://hub.docker.com/_/python) 
+as the base, which is a Debian OS. It specifically uses python:3-slim to keep the image size 
 down for faster loading of Github Actions that use pyaction. On top of the 
 base, we've installed [curl](https://curl.se/), 
 [gpg](https://gnupg.org/), [git](https://git-scm.com/), and the 
@@ -29,18 +28,12 @@ __Blog Post on DEV:__ [pyaction: A Docker container with Python, git, and the Gi
 
 ## Multiplatform Image
 
-__Version 4.0.0 and Newer__: pyaction supports the following 
-platforms:
+pyaction supports the following platforms:
 * linux/386
 * linux/amd64
 * linux/arm64
 * linux/arm/v7
 * linux/arm/v6
-
-__Version 3.14.0 and Earlier__: earlier releases supported the
-above as well as the following:
-* linux/ppc64le
-* linux/s390x 
 
 ## Source Repository and Builds
 
@@ -55,24 +48,27 @@ Our daily automated CI/CD processes monitor for updates to the Python slim Docke
 CLI, etc. Upon detecting such updates, we release an update of pyaction sometimes as 
 early as same day, but possibly a few days later.
 
-See [CHANGELOG](https://github.com/cicirello/pyaction/blob/master/CHANGELOG.md) for details of
-versions of Python, GitHub CLI, git, etc included in each pyaction release.
+See [versions.json](https://github.com/cicirello/pyaction/blob/master/versions.json) for details of
+versions of Python, GitHub CLI, git, etc included in the latest build.
 
 
 ## Docker Tags and Versioning Scheme
 
-We use [Semantic Versioning](https://semver.org/) for our tags.
-[Semantic Versioning](https://semver.org/) uses version numbers 
-of the form: MAJOR.MINOR.PATCH, where differences in 
-MAJOR correspond to incompatible changes, differences in MINOR 
-correspond to introduction of backwards compatible new functionality, 
-and PATCH corresponds to backwards compatible bug fixes.
+For the current version of Python (e.g., 3.13.5) and current version 
+of GitHub CLI (e.g., 2.75.0), all of the following tags are available and equivalent:
+`latest`, `3.13.5`, `3.13`, `3.13.5-gh-2.75.0`, `3.13.5-gh-2.75`, `3.13.5-gh-2`, 
+`3.13-gh-2.75.0`, `3.13-gh-2.75`, `3.13-gh-2`.
 
-Each image pushed to Docker Hub and the Github Container Registry is tagged as follows:
-* The tag `latest` indicates, well, the latest image.
-* Tags of the form MAJOR.MINOR.PATCH (e.g., 4.0.0).
-* Tags of the form MAJOR.MINOR (e.g., 4.0).
-* Tags of the form MAJOR (e.g., 4).
+For prior versions of Python (3.8, 3.9, 3.10, 3.11, 3.12) and current version of 
+GitHub CLI (2.75.0), all of the following tags are available and equivalent: 
+`3.12`, `3.12-gh-2.75.0`, `3.12-gh-2.75`, `3.12-gh-2`.
+
+This tag scheme began with version 2.75.0 of the GitHub CLI. We don't support pyaction
+images with earlier versions of the GitHub CLI.
+
+This tag scheme began with Python 3.13.5. Python patch level tags are not available for
+pyaction prior to Python 3.13.5.
+
 
 ## Installation and Usage
 
@@ -117,6 +113,7 @@ FROM ghcr.io/cicirello/pyaction:latest
 ## Blog Posts
 
 Here are a few blog posts about the pyaction container listed in reverse chronological order:
+* [pyaction pulled 4 million times and counting from the GitHub Container Registry](https://dev.to/cicirello/pyaction-pulled-4-million-times-and-counting-from-the-github-container-registry-47i3), posted on May 31, 2024.
 * [Celebrating over 2 million pulls of pyaction from the GitHub Container Registry](https://dev.to/cicirello/celebrating-over-2-million-pulls-of-pyaction-from-the-github-container-registry-20hb), posted on September 2, 2023.
 * [pyaction: Over 1 million pulls from the GitHub Container Registry](https://dev.to/cicirello/pyaction-over-1-million-pulls-from-the-github-container-registry-29ag), posted on February 16, 2023.
 * [pyaction: A Docker container with Python, git, and the GitHub CLI](https://dev.to/cicirello/pyaction-a-docker-container-with-python-git-and-the-github-cli-930), posted on December 28, 2022.
