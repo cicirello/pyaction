@@ -8,7 +8,7 @@ Website for our GitHub Actions and tools for developing them: https://actions.ci
 
 | __Docker Hub__ | [![Docker Image Version (latest by date)](https://img.shields.io/docker/v/cicirello/pyaction?label=Docker%20Hub&logo=docker)](https://hub.docker.com/r/cicirello/pyaction) [![Docker Pulls](https://img.shields.io/docker/pulls/cicirello/pyaction?logo=docker)](https://hub.docker.com/r/cicirello/pyaction) |
 | :--- | :--- |
-| __GitHub__ | [![GitHub Container Registry (latest by date)](https://ghcr-badge.egpl.dev/cicirello/pyaction/latest_tag?label=ghcr.io&color=%23007ec6&ignore=latest,3.12*,2*)](https://github.com/cicirello/pyaction/pkgs/container/pyaction) |
+| __GitHub__ | [![GitHub Container Registry (latest by date)](https://img.shields.io/docker/v/cicirello/pyaction?label=ghcr.io&logo=GitHub)](https://github.com/cicirello/pyaction/pkgs/container/pyaction) |
 | __Image Stats__ | [![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/cicirello/pyaction?logo=docker)](https://hub.docker.com/r/cicirello/pyaction) |
 | __Build Status__ | [![build](https://github.com/cicirello/pyaction/workflows/build/badge.svg)](https://github.com/cicirello/pyaction/actions/workflows/docker-image.yml) |
 | __License__ | [![License](https://img.shields.io/github/license/cicirello/pyaction)](LICENSE) |
