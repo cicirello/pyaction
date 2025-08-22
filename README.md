@@ -59,9 +59,11 @@ of GitHub CLI (e.g., 2.75.0), all of the following tags are available and equiva
 `latest`, `3.13.5`, `3.13`, `3.13.5-gh-2.75.0`, `3.13.5-gh-2.75`, `3.13.5-gh-2`, 
 `3.13-gh-2.75.0`, `3.13-gh-2.75`, `3.13-gh-2`.
 
-For prior versions of Python (3.8, 3.9, 3.10, 3.11, 3.12) and current version of 
+For prior versions of Python (e.g., 3.12) and current version of 
 GitHub CLI (2.75.0), all of the following tags are available and equivalent: 
-`3.12`, `3.12-gh-2.75.0`, `3.12-gh-2.75`, `3.12-gh-2`.
+`3.12`, `3.12-gh-2.75.0`, `3.12-gh-2.75`, `3.12-gh-2`. Note that we only build
+new images for Python versions that are still supported, and not for any that
+have reached end-of-life. See the official [Status of Python Versions](https://devguide.python.org/versions/).
 
 This tag scheme began with version 2.75.0 of the GitHub CLI. We don't support pyaction
 images with earlier versions of the GitHub CLI.
