@@ -270,7 +270,6 @@ jobs:
           labels: org.opencontainers.image.version=${{ steps.prep.outputs.version }}
 
   python-3-9:
-    needs: python-3-8
     runs-on: ubuntu-latest
 
     steps:
