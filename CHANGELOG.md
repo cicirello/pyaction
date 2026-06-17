@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased] - 2026-06-11
+## [Unreleased] - 2026-06-17
 
 ### Added
 
@@ -12,8 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Bumped git to 2.47.3.
 * Bumped curl to 8.14.1.
 * Bumped gpg to 2.4.7.
-* Bumped Python to 3.14.5.
-* Bumped GitHub CLI to 2.94.0.
+* Bumped Python to 3.14.6.
+* Bumped GitHub CLI to 2.95.0.
 
 ### Deprecated
 
